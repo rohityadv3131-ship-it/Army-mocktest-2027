@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Army Hard Level - 20 Mock Tests</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #eef2f5; margin: 0; padding: 20px; }
+        .quiz-container { max-width: 800px; margin: auto; background: #ffffff; padding: 25px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #2e7d32; padding-bottom: 15px; margin-bottom: 20px; }
+        .test-select { width: 100%; padding: 12px; font-size: 16px; border-radius: 6px; border: 1px solid #ccc; margin-bottom: 20px; background: #fff; font-weight: bold; }
+        .question-box { background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 5px solid #2e7d32; margin-bottom: 20px; }
+        .question { font-weight: 600; font-size: 17px; margin-bottom: 12px; color: #2c3e50; }
+        .options label { display: block; background: #ffffff; padding: 10px 15px; margin-bottom: 8px; border-radius: 5px; border: 1px solid #dcdfe3; cursor: pointer; transition: 0.2s; }
+        .options label:hover { background: #e8f5e9; border-color: #2e7d32; }
+        .options input { margin-right: 10px; }
+        .btn-submit { background-color: #2e7d32; color: white; padding: 14px 20px; font-size: 18px; border: none; border-radius: 6px; cursor: pointer; width: 100%; font-weight: bold; }
+        .btn-submit:hover { background-color: #1b5e20; }
+        #result-box { display: none; text-align: center; padding: 20px; }
+        .score-card { font-size: 24px; font-weight: bold; color: #2e7d32; margin: 15px 0; }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <div class="header">
+        <h2>Indian Army (Hard Level) Series</h2>
+    </div>
+
+    <!-- Test Select Dropdown (1 to 20) -->
+    <label for="test-select"><b>मॉक टेस्ट चुनें (Choose Mock Test):</b></label>
+    <select id="test-select" class="test-select" onchange="loadTest()">
+        <option value="1">Mock Test 1 (50 Questions)</option>
+        <option value="2">Mock Test 2 (50 Questions)</option>
+        <option value="3">Mock Test 3 (50 Questions)</option>
+        <option value="4">Mock Test 4 (50 Questions)</option>
+        <option value="5">Mock Test 5 (50 Questions)</option>
+        <option value="6">Mock Test 6 (50 Questions)</option>
+        <option value="7">Mock Test 7 (50 Questions)</option>
+        <option value="8">Mock Test 8 (50 Questions)</option>
+        <option value="9">Mock Test 9 (50 Questions)</option>
+        <option value="10">Mock Test 10 (50 Questions)</option>
+        <option value="11">Mock Test 11 (50 Questions)</option>
+        <option value="12">Mock Test 12 (50 Questions)</option>
+        <option value="13">Mock Test 13 (50 Questions)</option>
+        <option value="14">Mock Test 14 (50 Questions)</option>
+        <option value="15">Mock Test 15 (50 Questions)</option>
+        <option value="16">Mock Test 16 (50 Questions)</option>
+        <option value="17">Mock Test 17 (50 Questions)</option>
+        <option value="18">Mock Test 18 (50 Questions)</option>
+        <option value="19">Mock Test 19 (50 Questions)</option>
+        <option value="20">Mock Test 20 (50 Questions)</option>
+    </select>
+
+    <form id="quiz-form">
+        <div id="questions-area"></div>
+        <button type="button" class="btn-submit" onclick="submitQuiz()">Submit Test</button>
+    </form>
+
+    <div id="result-box">
+        <h2>आपका टेस्ट परिणाम (Result)</h2>
+        <div class="score-card" id="score-text"></div>
+        <button class="btn-submit" onclick="resetQuiz()">दूसरा टेस्ट दें</button>
+    </div>
+</div>
+
+<script>
+// 20 Mock Tests ka Data Base (Har Test me 50 Questions add karne ka structure)
+const testDatabase = {
+    1: [
+        { q: "Q1. प्लासी का युद्ध 1757 में किस नदी के तट पर लड़ा गया था?", options: ["गंगा", "भागीरथी", "यमुना", "दामोदर"], answer: 1 },
+        { q: "Q2. मानव शरीर में सबसे बड़ी अंतःस्रावी (Endocrine) ग्रंथि कौन सी है?", options: ["पीयूष ग्रंथि", "थायरॉयड", "अग्न्याशय", "यकृत"], answer: 1 },
+        { q: "Q3. यदि किसी वस्तु का द्रव्यमान दोगुना कर दिया जाए, तो उसकी गतिज ऊर्जा पर क्या प्रभाव पड़ेगा?", options: ["दोगुनी होगी", "चार गुनी होगी", "आधी होगी", "अपरिवर्तित रहेगी"], answer: 0 },
+        // ... Yahan Test 1 ke baki 47 questions aayenge (Total 50)
+    ],
+    2: [
+        { q: "Q1. हड़प्पा सभ्यता का प्रसिद्ध स्थल 'धौलावीरा' किस राज्य में स्थित है?", options: ["राजस्थान", "पंजाब", "गुजरात", "हरियाणा"], answer: 2 },
+        { q: "Q2. प्रकाश की गति सर्वाधिक किस माध्यम में होती है?", options: ["जल", "कांच", "निर्वात (Vaccum)", "वायु"], answer: 2 },
+        // ... Yahan Test 2 ke baki 48 questions aayenge (Total 50)
+    ]
+    // Isi tarah Test 3 se lekar Test 20 tak ka array banega.
+};
+
+let currentTest = 1;
+
+function loadTest() {
+    currentTest = document.getElementById('test-select').value;
+    const questions = testDatabase[currentTest] || [];
+    const questionsArea = document.getElementById('questions-area');
+    
+    document.getElementById('quiz-form').style.display = 'block';
+    document.getElementById('result-box').style.display = 'none';
+    questionsArea.innerHTML = '';
+
+    if (questions.length === 0) {
+        questionsArea.innerHTML = '<p>इस टेस्ट के सवाल जल्द ही अपडेट किए जाएंगे।</p>';
+        return;
+    }
+
+    questions.forEach((qData, index) => {
+        let qHtml = `
+            <div class="question-box">
+                <div class="question">${qData.q}</div>
+                <div class="options">
+                    ${qData.options.map((opt, optIndex) => `
+                        <label>
+                            <input type="radio" name="q${index}" value="${optIndex}">
+                            ${optIndex + 1}) ${opt}
+                        </label>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+        questionsArea.innerHTML += qHtml;
+    });
+}
+
+function submitQuiz() {
+    const questions = testDatabase[currentTest] || [];
+    if(questions.length === 0) return;
+
+    let score = 0;
+    questions.forEach((qData, index) => {
+        const selected = document.querySelector(`input[name="q${index}"]:checked`);
+        if (selected && parseInt(selected.value) === qData.answer) {
+            score += 2; // Har sahi uttar par 2 marks
+        }
+    });
+
+    const totalMarks = questions.length * 2;
+    document.getElementById('quiz-form').style.display = 'none';
+    document.getElementById('result-box').style.display = 'block';
+    document.getElementById('score-text').innerText = `आपने ${totalMarks} में से ${score} अंक प्राप्त किए!`;
+}
+
+function resetQuiz() {
+    document.getElementById('quiz-form').style.display = 'block';
+    document.getElementById('result-box').style.display = 'none';
+    window.scrollTo(0,0);
+}
+
+// Page load par pehla test load karein
+loadTest();
+</script>
+
+</body>
+</html>
