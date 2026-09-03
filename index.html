@@ -1,162 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="hi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Indian Army 5 Full Mock Tests (250 Unique Questions)</title>
-    <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f0f2f5; margin: 0; padding: 15px; }
-        .quiz-container { max-width: 850px; margin: auto; background: #ffffff; padding: 25px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #1b5e20; padding-bottom: 10px; margin-bottom: 20px; }
-        .test-select { width: 100%; padding: 12px; font-size: 16px; border-radius: 6px; border: 2px solid #1b5e20; margin-bottom: 20px; font-weight: bold; background: #fff; }
-        .section-header { background: #1b5e20; color: white; padding: 8px 12px; border-radius: 5px; margin: 20px 0 10px; font-size: 18px; font-weight: bold; }
-        .question-box { background: #f8f9fa; padding: 15px; border-radius: 6px; border-left: 4px solid #1b5e20; margin-bottom: 15px; }
-        .question { font-weight: 600; font-size: 16px; margin-bottom: 10px; color: #2c3e50; }
-        .options label { display: block; background: #fff; padding: 10px 14px; margin-bottom: 6px; border-radius: 5px; border: 1px solid #dcdfe3; cursor: pointer; transition: 0.2s; }
-        .options label:hover { background: #e8f5e9; border-color: #1b5e20; }
-        .options input { margin-right: 10px; }
-        .btn-submit { background-color: #1b5e20; color: white; padding: 14px; font-size: 18px; border: none; border-radius: 6px; cursor: pointer; width: 100%; font-weight: bold; margin-top: 20px; }
-        .btn-submit:hover { background-color: #0d3b10; }
-        #result-box { display: none; text-align: center; padding: 20px; }
-        .score { font-size: 26px; font-weight: bold; color: #1b5e20; margin: 15px 0; }
-    </style>
-</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Army Mock Test 2027</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:#f3f5f7;color:#17202a}
+header{background:#173b2d;color:#fff;padding:22px 16px;text-align:center}header h1{margin:0;font-size:28px}header p{margin:7px 0 0;opacity:.9}
+.wrap{max-width:1000px;margin:auto;padding:18px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{background:#fff;border-radius:14px;padding:18px;box-shadow:0 3px 14px #00000012;border:1px solid #e4e7ea}.card h3{margin:0 0 7px}.card p{color:#5f6b75}.btn{border:0;border-radius:9px;padding:11px 15px;background:#173b2d;color:#fff;font-weight:700;cursor:pointer}.btn.secondary{background:#e9edf0;color:#17202a}
+.hidden{display:none}.topbar{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:15px}.timer{font-weight:800;background:#fff;padding:10px 14px;border-radius:9px}
+.qbox{background:#fff;border-radius:14px;padding:20px;box-shadow:0 3px 14px #00000012}.tag{font-size:12px;font-weight:800;color:#7a2d00;background:#fff0e8;padding:4px 7px;border-radius:6px;display:inline-block;margin-bottom:10px}.qtext{font-size:19px;font-weight:700;line-height:1.45}.opt{display:block;border:1px solid #dce1e5;border-radius:10px;padding:12px;margin:9px 0;cursor:pointer}.opt:hover{background:#f6f8f9}.nav{display:flex;justify-content:space-between;gap:10px;margin-top:15px}
+.result{background:#fff;padding:24px;border-radius:14px;text-align:center;box-shadow:0 3px 14px #00000012}.score{font-size:40px;font-weight:900}.review{text-align:left;margin-top:18px}.review div{padding:10px;border-bottom:1px solid #eee}.correct{color:#147a3d}.wrong{color:#b3261e}.muted{color:#69757f}
+@media(max-width:600px){header h1{font-size:23px}.qtext{font-size:17px}.wrap{padding:12px}}
+</style></head>
 <body>
-
-<div class="quiz-container">
-    <div class="header">
-        <h2>Indian Army Exam Practice Set (50 Qs x 5 Tests = 250 Qs)</h2>
-    </div>
-
-    <label for="mock-select-box"><b>मॉक टेस्ट चुनें (Select Mock Test):</b></label>
-    <select id="mock-select-box" class="test-select" onchange="renderQuestions()">
-        <option value="1">Mock Test 1 (50 Unique Questions)</option>
-        <option value="2">Mock Test 2 (50 Unique Questions)</option>
-        <option value="3">Mock Test 3 (50 Unique Questions)</option>
-        <option value="4">Mock Test 4 (50 Unique Questions)</option>
-        <option value="5">Mock Test 5 (50 Unique Questions)</option>
-    </select>
-
-    <form id="quiz-form">
-        <div id="questions-area"></div>
-        <button type="button" class="btn-submit" onclick="submitQuiz()">Submit Full Test</button>
-    </form>
-
-    <div id="result-box">
-        <h2>आपका कुल स्कोर (Result)</h2>
-        <div class="score" id="score-text"></div>
-        <button class="btn-submit" onclick="resetQuiz()">दूसरा टेस्ट दें</button>
-    </div>
+<header><h1>🇮🇳 Army Mock Test 2027</h1><p>GD तैयारी • 10 Mock Tests • 50 प्रश्न • 60 मिनट</p></header>
+<div class="wrap">
+<section id="home">
+<h2>Mock Tests</h2><p class="muted">हर टेस्ट में 15 GK + 15 Science + 15 Maths + 5 Reasoning हैं।</p>
+<div id="cards" class="grid"></div>
+</section>
+<section id="quiz" class="hidden">
+<div class="topbar"><button class="btn secondary" onclick="goHome()">← Tests</button><b id="title"></b><div class="timer" id="timer">60:00</div></div>
+<div class="qbox"><div id="progress" class="muted"></div><div id="tag" class="tag"></div><div id="qtext" class="qtext"></div><div id="opts"></div>
+<div class="nav"><button class="btn secondary" onclick="prevQ()">पिछला</button><button class="btn" onclick="nextQ()">अगला</button></div></div>
+</section>
+<section id="result" class="hidden"><div class="result"><h2 id="resultTitle"></h2><div class="score" id="score"></div><p id="stats"></p><button class="btn" onclick="goHome()">सभी टेस्ट</button><div id="review" class="review"></div></div></section>
 </div>
-
 <script>
-const testDatabase = {
-    1: [
-        { q: "Q1. [GK] बक्सर के युद्ध (1764) में ब्रिटिश सेना का नेतृत्व किसने किया था? [Army GD 2023]", options: ["रॉबर्ट क्लाइव", "हेक्टर मुनरो", "वारेन हेस्टिंग्स", "लॉर्ड डलहौजी"], answer: 1 },
-        { q: "Q2. [GK] संविधान की 8वीं अनुसूची में वर्तमान में कितनी भाषाएं शामिल हैं? [Army Clerk 2024]", options: ["18", "20", "22", "24"], answer: 2 },
-        { q: "Q3. [GK] हड़प्पा सभ्यता का प्रसिद्ध बंदरगाह नगर 'लोथल' किस नदी के तट पर स्थित था? [Army Tech 2024]", options: ["सिंधु", "रावी", "भोगवा", "घग्गर"], answer: 2 },
-        { q: "Q4. [GK] 'पोवर्टी एंड अन-ब्रिटिश रूल इन इंडिया' पुस्तक के लेखक कौन हैं? [Army GD 2022]", options: ["लाला लाजपत राय", "दादाभाई नौरोजी", "आर.सी. दत्त", "महात्मा गांधी"], answer: 1 },
-        { q: "Q5. [GK] 'सत्यशोधक समाज' की स्थापना किसने की थी? [Army Tradesman 2023]", options: ["स्वामी दयानंद", "ज्योतिबा फुले", "राजा राममोहन राय", "आत्माराम पांडुरंग"], answer: 1 },
-        { q: "Q6. [GK] 'नागार्जुन सागर बांध' किस नदी पर स्थित है? [Army GD 2024]", options: ["कावेरी", "कृष्णा", "गोदावरी", "नर्मदा"], answer: 1 },
-        { q: "Q7. [GK] काजीरंगा राष्ट्रीय उद्यान किस राज्य में स्थित है? [Army GD 2025]", options: ["असम", "पश्चिम बंगाल", "उत्तराखंड", "ओडिशा"], answer: 0 },
-        { q: "Q8. [GK] भारतीय संविधान में 'मूल कर्तव्य' किस देश के संविधान से लिए गए हैं? [Army Clerk 2023]", options: ["अमेरिका", "रूस (पूर्व सोवियत संघ)", "जर्मनी", "आयरलैंड"], answer: 1 },
-        { q: "Q9. [GK] 'रेडक्लिफ रेखा' किन दो देशों के बीच की सीमा रेखा है? [Army GD 2024]", options: ["भारत-चीन", "भारत-पाकिस्तान", "भारत-अफगानिस्तान", "भारत-बांग्लादेश"], answer: 1 },
-        { q: "Q10. [GK] भारत में राष्ट्रीय आय का आकलन सबसे पहले किसने किया था? [Army Tech 2023]", options: ["वी.के.आर.वी. राव", "दादाभाई नौरोजी", "सरदार पटेल", "पी.सी. महालनोबिस"], answer: 1 },
-        { q: "Q11. [GK] 'यक्षगान' किस राज्य का प्रसिद्ध लोक नृत्य है? [Army Tradesman 2024]", options: ["केरल", "तमिलनाडु", "कर्नाटक", "आंध्र प्रदेश"], answer: 2 },
-        { q: "Q12. [GK] राज्य सभा का पदेन सभापति कौन होता है? [Army GD 2025]", options: ["राष्ट्रपति", "उपराष्ट्रपति", "प्रधानमंत्री", "लोकसभा अध्यक्ष"], answer: 1 },
-        { q: "Q13. [GK] प्रसिद्ध 'गायत्री मंत्र' किस वेद से लिया गया है? [Army GD 2023]", options: ["ऋग्वेद", "सामवेद", "यजुर्वेद", "अथर्ववेद"], answer: 0 },
-        { q: "Q14. [GK] 'अंतर्राष्ट्रीय न्यायालय' का मुख्यालय कहाँ स्थित है? [Army Clerk 2024]", options: ["जेनेवा", "द हेग", "न्यूयोर्क", "पेरिस"], answer: 1 },
-        { q: "Q15. [GK] स्वतंत्र भारत के प्रथम भारतीय गवर्नर जनरल कौन थे? [Army GD 2022]", options: ["लॉर्ड माउंटबैटन", "सी. राजगोपालाचारी", "डॉ. राजेंद्र प्रसाद", "जवाहरलाल नेहरू"], answer: 1 },
-        { q: "Q16. [Science] जब प्रकाश एक माध्यम से दूसरे माध्यम में जाता है, तो कौन सी राशि अपरिवर्तित रहती है? [Army Tech 2024]", options: ["तरंगदैर्ध्य", "वेग", "आवृत्ति", "तीव्रता"], answer: 2 },
-        { q: "Q17. [Science] मानव शरीर में 'पेसमेकर' का संबंध किस अंग से है? [Army GD 2025]", options: ["वृक्क", "मस्तिष्क", "हृदय", "फेफड़े"], answer: 2 },
-        { q: "Q18. [Science] भारी जल (Heavy Water) का रासायनिक सूत्र क्या है? [Army Clerk 2024]", options: ["H2O2", "D2O", "H2O", "CO2"], answer: 1 },
-        { q: "Q19. [Science] रॉकेट किस सिद्धांत पर कार्य करता है? [Army Tech 2023]", options: ["ऊर्जा संरक्षण", "न्यूटन का द्वितीय नियम", "संवेग संरक्षण", "आर्किमिडीज सिद्धांत"], answer: 2 },
-        { q: "Q20. [Science] दूध का घनत्व मापने के लिए किस उपकरण का उपयोग किया जाता है? [Army GD 2024]", options: ["हाइड्रोमीटर", "लैक्टोमीटर", "बैरोमीटर", "फैदोमीटर"], answer: 1 },
-        { q: "Q21. [Science] विटामिन 'C' का रासायनिक नाम क्या है? [Army Tradesman 2023]", options: ["रेटिनॉल", "एस्कॉर्बिक एसिड", "कैल्सीफेरोल", "थियामिन"], answer: 1 },
-        { q: "Q22. [Science] मानव शरीर की सबसे बड़ी ग्रंथि कौन सी है? [Army GD 2025]", options: ["थायरॉइड", "यकृत (Liver)", "अग्न्याशय", "पीयूष ग्रंथि"], answer: 1 },
-        { q: "Q23. [Science] इलेक्ट्रॉन की खोज किसने की थी? [Army GD 2023]", options: ["जे.जे. थॉमसन", "रदरफोर्ड", "चैडविक", "न्यूटन"], answer: 0 },
-        { q: "Q24. [Science] कार्य का मात्रक (SI Unit) क्या है? [Army Tech 2024]", options: ["न्यूटन", "जूल", "वाट", "डाइन"], answer: 1 },
-        { q: "Q25. [Science] सबसे हल्की धातु कौन सी है? [Army Clerk 2023]", options: ["पारा", "लिथियम", "ऑस्मियम", "सोडियम"], answer: 1 },
-        { q: "Q26. [Science] ध्वनि की चाल सबसे अधिक किसमें होती है? [Army GD 2024]", options: ["जल", "वायु", "ठोस (इस्पात)", "निर्वात"], answer: 2 },
-        { q: "Q27. [Science] आवर्त सारणी में 'सोडियम' का प्रतीक चिह्न क्या है? [Army GD 2022]", options: ["So", "Sd", "Na", "K"], answer: 2 },
-        { q: "Q28. [Science] रक्त का थक्का बनाने में कौन सा विटामिन सहायक होता है? [Army GD 2025]", options: ["विटामिन A", "विटामिन B", "विटामिन E", "विटामिन K"], answer: 3 },
-        { q: "Q29. [Science] पित्त (Bile) का निर्माण शरीर के किस अंग में होता है? [Army Clerk 2024]", options: ["यकृत", "पिताशय", "अग्न्याशय", "आमाशय"], answer: 0 },
-        { q: "Q30. [Science] मानव शरीर में गुणसूत्रों (Chromosomes) की संख्या कितनी होती है? [Army GD 2023]", options: ["23", "46", "44", "48"], answer: 1 },
-        { q: "Q31. [Maths] यदि A:B = 2:3 और B:C = 4:5 है, तो A:B:C क्या होगा? [Army Tradesman 2023]", options: ["8:12:15", "6:9:15", "8:10:12", "2:4:5"], answer: 0 },
-        { q: "Q32. [Maths] एक राशि साधारण ब्याज पर 5 वर्षों में दोगुनी हो जाती है। ब्याज की वार्षिक दर क्या है? [Army GD 2024]", options: ["10%", "15%", "20%", "25%"], answer: 2 },
-        { q: "Q33. [Maths] दो संख्याओं का LCM 120 और HCF 10 है। यदि एक संख्या 30 है, तो दूसरी संख्या क्या होगी? [Army Tech 2024]", options: ["40", "50", "60", "20"], answer: 0 },
-        { q: "Q34. [Maths] 15 वस्तुओं का क्रय मूल्य 10 वस्तुओं के विक्रय मूल्य के बराबर है। लाभ प्रतिशत ज्ञात करें। [Army Clerk 2023]", options: ["25%", "33.33%", "50%", "20%"], answer: 2 },
-        { q: "Q35. [Maths] यदि किसी वृत्त की त्रिज्या में 10% की वृद्धि की जाए, तो उसके क्षेत्रफल में कितने % की वृद्धि होगी? [Army GD 2025]", options: ["20%", "21%", "10%", "25%"], answer: 1 },
-        { q: "Q36. [Maths] A एक काम को 10 दिन में और B उसे 15 दिन में पूरा करता है। दोनों मिलकर उस काम को कितने दिन में करेंगे? [Army GD 2024]", options: ["5 दिन", "6 दिन", "8 दिन", "7.5 दिन"], answer: 1 },
-        { q: "Q37. [Maths] 100 मीटर लंबी ट्रेन 30 किमी/घंटा की गति से एक खंभे को कितने समय में पार करेगी? [Army Tech 2023]", options: ["12 सेकंड", "10 सेकंड", "15 सेकंड", "18 सेकंड"], answer: 0 },
-        { q: "Q38. [Maths] √0.0009 का मान क्या है? [Army Tradesman 2024]", options: ["0.03", "0.3", "0.003", "3"], answer: 0 },
-        { q: "Q39. [Maths] 20% और 10% की दो क्रमिक छूट (Discount) का एक समतुल्य बट्टा क्या होगा? [Army Clerk 2024]", options: ["30%", "28%", "25%", "22%"], answer: 1 },
-        { q: "Q40. [Maths] प्रथम 50 प्राकृत संख्याओं का औसत क्या होगा? [Army GD 2023]", options: ["25", "25.5", "26", "26.5"], answer: 1 },
-        { q: "Q41. [Maths] यदि (x + 1/x) = 3 है, तो (x² + 1/x²) का मान क्या होगा? [Army Tech 2024]", options: ["7", "9", "6", "8"], answer: 0 },
-        { q: "Q42. [Maths] 800 रुपये पर 5% वार्षिक दर से 2 वर्ष का चक्रवृद्धि ब्याज क्या होगा? [Army Clerk 2025]", options: ["80 रु", "82 रु", "84 रु", "88 रु"], answer: 1 },
-        { q: "Q43. [Maths] एक समबाहु त्रिभुज की भुजा 6 सेमी है। इसका क्षेत्रफल क्या होगा? [Army Tech 2023]", options: ["9√3 सेमी²", "18 सेमी²", "12√3 सेमी²", "36 सेमी²"], answer: 0 },
-        { q: "Q44. [Maths] (25)³ × (5)⁴ ÷ (125)² का मान क्या होगा? [Army GD 2024]", options: ["5⁴", "5⁶", "5²", "5⁵"], answer: 0 },
-        { q: "Q45. [Maths] 4, 8, 12, और X का औसत 10 है। X का मान ज्ञात कीजिए। [Army Tradesman 2023]", options: ["14", "16", "18", "20"], answer: 1 },
-        { q: "Q46. [Reasoning] श्रृंखला को पूरा करें: 2, 6, 12, 20, 30, ? [Army GD 2024]", options: ["36", "40", "42", "48"], answer: 2 },
-        { q: "Q47. [Reasoning] यदि C = 3, CAT = 24, तो FAITH = ? [Army Clerk 2023]", options: ["44", "42", "45", "41"], answer: 0 },
-        { q: "Q48. [Reasoning] विषम को चुनिए: 64, 125, 216, 342 [Army GD 2025]", options: ["64", "125", "216", "342"], answer: 3 },
-        { q: "Q49. [Reasoning] यदि उत्तर-पूर्व को 'दक्षिण' कहा जाए, तो पश्चिम को क्या कहा जाएगा? [Army Tech 2024]", options: ["उत्तर-पूर्व", "दक्षिण-पूर्व", "उत्तर-पश्चिम", "दक्षिण"], answer: 0 },
-        { q: "Q50. [Reasoning] A, B का भाई है। C, A की माता है। D, C का पिता है। B का D से क्या संबंध है? [Army GD 2023]", options: ["पोता / नाती", "पुत्र", "पिता", "दादा"], answer: 0 }
-    ],
-    2: [
-        { q: "Q1. [GK] 'इंकलाब जिंदाबाद' का नारा सर्वप्रथम किसने दिया था? [Army GD 2024]", options: ["भगत सिंह", "हसरत मोहानी", "चंद्रशेखर आजाद", "सुभाष चंद्र बोस"], answer: 1 },
-        { q: "Q2. [GK] भारत में 'हरित क्रांति' के जनक कौन माने जाते हैं? [Army GD 2023]", options: ["वर्गिज कुरियन", "एम. एस. स्वामीनाथन", "डॉ. होमी भाभा", "सैम पित्रोदा"], answer: 1 },
-        { q: "Q3. [GK] महात्मा गांधी ने 'करो या मरो' का नारा किस आंदोलन में दिया था? [Army Clerk 2024]", options: ["असहयोग आंदोलन", "सविनय अवज्ञा आंदोलन", "भारत छोड़ो आंदोलन", "चंपारण सत्याग्रह"], answer: 2 },
-        { q: "Q4. [GK] विश्व की सबसे गहरी झील कौन सी है? [Army Tech 2023]", options: ["कैस्पियन सागर", "बैकाल झील", "सुपीरियर झील", "विक्टोरिया झील"], answer: 1 },
-        { q: "Q5. [GK] भारतीय राष्ट्रीय कांग्रेस की पहली महिला अध्यक्ष कौन थीं? [Army Tradesman 2024]", options: ["सरोजिनी नायडू", "एनी बेसेंट", "सुचेता कृपलानी", "राजकुमारी अमृत कौर"], answer: 1 },
-        { q: "Q6. [GK] 'हीराकुंड बांध' किस नदी पर निर्मित है? [Army GD 2025]", options: ["महानदी", "गोदावरी", "नर्मदा", "ताप्ती"], answer: 0 },
-        { q: "Q7. [GK] भाखड़ा नांगल परियोजना किस नदी पर बनी है? [Army GD 2023]", options: ["सतलज", "व्याप्त", "झेलम", "चिनाब"], answer: 0 },
-        { q: "Q8. [GK] भारत का सबसे बड़ा क्षेत्रफल वाला राज्य कौन सा है? [Army Clerk 2024]", options: ["उत्तर प्रदेश", "महाराष्ट्र", "राजस्थान", "मध्य प्रदेश"], answer: 2 },
-        { q: "Q9. [GK] 'कथकली' किस राज्य का प्रसिद्ध शास्त्रीय नृत्य है? [Army GD 2024]", options: ["तमिलनाडु", "केरल", "आंध्र प्रदेश", "ओडिशा"], answer: 1 },
-        { q: "Q10. [GK] 'अष्टाध्यायी' पुस्तक के रचयिता कौन हैं? [Army Tech 2023]", options: ["कालिदास", "पाणिनि", "बाणभट्ट", "वेदव्यास"], answer: 1 },
-        { q: "Q11. [GK] सूर्य के सबसे निकटतम ग्रह कौन सा है? [Army GD 2025]", options: ["शुक्र", "बुध", "मंगल", "पृथ्वी"], answer: 1 },
-        { q: "Q12. [GK] पंचायती राज व्यवस्था सर्वप्रथम किस राज्य में लागू की गई थी? [Army Tradesman 2024]", options: ["पंजाब", "राजस्थान", "गुजरात", "उत्तर प्रदेश"], answer: 1 },
-        { q: "Q13. [GK] भारत के राष्ट्रपति को पद की शपथ कौन दिलाता है? [Army Clerk 2023]", options: ["प्रधानमंत्री", "उपराष्ट्रपति", "भारत का मुख्य न्यायाधीश", "लोकसभा अध्यक्ष"], answer: 2 },
-        { q: "Q14. [GK] नीति आयोग का पदेन अध्यक्ष कौन होता है? [Army GD 2024]", options: ["वित्त मंत्री", "प्रधानमंत्री", "राष्ट्रपति", "गृह मंत्री"], answer: 1 },
-        { q: "Q15. [GK] 'गीत गोविंद' के रचयिता कौन थे? [Army Tech 2024]", options: ["जयदेव", "कबीरदास", "तुलसीदास", "सूरदास"], answer: 0 },
-        { q: "Q16. [Science] पेंसिल में प्रयुक्त काला पदार्थ क्या होता है? [Army GD 2024]", options: ["कोयला", "ग्रेफाइट", "सीसा", "कार्बन"], answer: 1 },
-        { q: "Q17. [Science] मानव शरीर में रक्त का शुद्धिकरण कहाँ होता है? [Army Tech 2023]", options: ["फेफड़े", "हृदय", "वृक्क (Kidney)", "यकृत"], answer: 2 },
-        { q: "Q18. [Science] पानी का अधिकतम घनत्व किस तापमान पर होता है? [Army GD 2025]", options: ["0°C", "100°C", "4°C", "-4°C"], answer: 2 },
-        { q: "Q19. [Science] विद्युत बल्ब का फिलामेंट किस धातु का बना होता है? [Army Clerk 2024]", options: ["तांबा", "नाइक्रोम", "टंगस्टन", "एल्युमिनियम"], answer: 2 },
-        { q: "Q20. [Science] मानव शरीर की सबसे छोटी हड्डी कौन सी है? [Army GD 2023]", options: ["फीमर", "स्टेपिज", "टीबिया", "ह्यूमरस"], answer: 1 },
-        { q: "Q21. [Science] 'पेनिसिलिन' की खोज किसने की थी? [Army Tradesman 2024]", options: ["लुई पाश्चर", "अलेक्जेंडर फ्लेमिंग", "एडवर्ड जेनर", "रॉबर्ट कोच"], answer: 1 },
-        { q: "Q22. [Science] गुब्बारे में कौन सी गैस भरी जाती है? [Army GD 2025]", options: ["ऑक्सीजन", "नाइट्रोजन", "हीलियम", "हाइड्रोजन"], answer: 2 },
-        { q: "Q23. [Science] प्रकाश वर्ष (Light Year) किसकी इकाई है? [Army Tech 2024]", options: ["समय", "दूरी", "प्रकाश की तीव्रता", "द्रव्यमान"], answer: 1 },
-        { q: "Q24. [Science] शुष्क बर्फ (Dry Ice) किसे कहते हैं? [Army Clerk 2023]", options: ["ठोस जल", "ठोस कार्बन डाइऑक्साइड", "ठोस सल्फर", "बर्फ का टुकड़ा"], answer: 1 },
-        { q: "Q25. [Science] मनुष्य का सामान्य रक्तचाप कितना होता है? [Army GD 2024]", options: ["80/120 mm Hg", "120/80 mm Hg", "100/60 mm Hg", "140/90 mm Hg"], answer: 1 },
-        { q: "Q26. [Science] न्यूट्रॉन की खोज किसने की थी? [Army GD 2023]", options: ["जेम्स चैडविक", "जे.जे. थॉमसन", "रदरफोर्ड", "बोहर"], answer: 0 },
-        { q: "Q27. [Science] कौन सी गैस ग्रीनहाउस प्रभाव के लिए मुख्य रूप से उत्तरदायी है? [Army Tradesman 2023]", options: ["ऑक्सीजन", "नाइट्रोजन", "कार्बन डाइऑक्साइड", "ओजोन"], answer: 2 },
-        { q: "Q28. [Science] रेबीज के टीके की खोज किसने की थी? [Army Tech 2024]", options: ["लुई पाश्चर", "एडवर्ड जेनर", "रॉबर्ट हुक", "अलेक्जेंडर"], answer: 0 },
-        { q: "Q29. [Science] निकट दृष्टि दोष (Myopia) के निवारण के लिए किस लेंस का प्रयोग किया जाता है? [Army Clerk 2024]", options: ["उत्तल लेंस", "अवतल लेंस", "द्विफोकसी लेंस", "बेलनाकार लेंस"], answer: 1 },
-        { q: "Q30. [Science] मानव शरीर में हीमोग्लोबिन का मुख्य कार्य क्या है? [Army GD 2025]", options: ["जीवाणुओं का नाश", "ऑक्सीजन का परिवहन", "रक्तचाप नियंत्रण", "ऊर्जा देना"], answer: 1 },
-        { q: "Q31. [Maths] 250 का 15% क्या होगा? [Army Tradesman 2024]", options: ["35.5", "37.5", "40.5", "32.5"], answer: 1 },
-        { q: "Q32. [Maths] एक त्रिभुज के तीनों कोणों का योग कितना होता है? [Army GD 2023]", options: ["90°", "180°", "360°", "270°"], answer: 1 },
-        { q: "Q33. [Maths] यदि x:4 = 9:x, तो x का मान क्या होगा? [Army Tech 2024]", options: ["5", "6", "36", "18"], answer: 1 },
-        { q: "Q34. [Maths] 500 रुपये पर 10% की दर से 3 साल का साधारण ब्याज क्या होगा? [Army GD 2024]", options: ["150 रु", "100 रु", "200 रु", "120 रु"], answer: 0 },
-        { q: "Q35. [Maths] वृत्त की परिधि का सूत्र क्या है? [Army Clerk 2023]", options: ["πr²", "2πr", "4πr", "2πr²"], answer: 1 },
-        { q: "Q36. [Maths] किसी संख्या का 40% यदि 80 है, तो वह संख्या क्या है? [Army Tradesman 2024]", options: ["150", "200", "250", "300"], answer: 1 },
-        { q: "Q37. [Maths] √144 + √81 का मान क्या होगा? [Army GD 2025]", options: ["21", "25", "15", "19"], answer: 0 },
-        { q: "Q38. [Maths] प्रथम 10 सम संख्याओं का योग क्या होगा? [Army Tech 2023]", options: ["100", "110", "120", "90"], answer: 1 },
-        { q: "Q39. [Maths] एक आयत की लंबाई 10 सेमी और चौड़ाई 8 सेमी है। इसका परिमाप ज्ञात करें। [Army Clerk 2024]", options: ["36 सेमी", "80 सेमी", "18 सेमी", "40 सेमी"], answer: 0 },
-        { q: "Q40. [Maths] 12 और 18 का महत्तम समापवर्तक (HCF) क्या होगा? [Army GD 2024]", options: ["2", "3", "6", "36"], answer: 2 },
-        { q: "Q41. [Maths] 72 किमी/घंटा को मीटर/सेकंड में बदलें। [Army Tech 2024]", options: ["15 m/s", "20 m/s", "25 m/s", "10 m/s"], answer: 1 },
-        { q: "Q42. [Maths] 0.5 को भिन्न में बदलें। [Army Tradesman 2023]", options: ["1/2", "1/4", "1/5", "2/5"], answer: 0 },
-        { q: "Q43. [Maths] यदि 5 कलम का मूल्य 25 रु है, तो 12 कलम का मूल्य क्या होगा? [Army GD 2025]", options: ["50 रु", "60 रु", "70 रु", "55 रु"], answer: 1 },
-        { q: "Q44. [Maths] (a + b)² का सही सूत्र क्या है? [Army Clerk 2023]", options: ["a² + b²", "a² + 2ab + b²", "a² - 2ab + b²", "a² + b² + ab"], answer: 1 },
-        { q: "Q45. [Maths] 3, 5, 7, 9, 11 का औसत क्या होगा? [Army GD 2024]", options: ["5", "6", "7", "8"], answer: 2 },
-        { q: "Q46. [Reasoning] यदि RAM = 32, तो SHAM = ? [Army GD 2023]", options: ["43", "40", "45", "50"], answer: 0 },
-        { q: "Q47. [Reasoning] 5, 10, 15, 20, ? अगला पद ज्ञात करें। [Army Tradesman 2024]", options: ["22", "25", "30", "28"], answer: 1 },
-        { q: "Q48. [Reasoning] विषम शब्द चुनें: कुत्ता, बिल्ली, गाय, शेर [Army GD 2025]", options: ["कुत्ता", "बिल्ली", "गाय", "शेर"], answer: 3 },
-        { q: "Q49. [Reasoning] यदि आँख : देखना, तो कान : ? [Army Clerk 2024]", options: ["सूंघना", "सुनना", "बोलना", "चखना"], answer: 1 },
-        { q: "Q50. [Reasoning] उत्तर की ओर मुंह करके खड़े व्यक्ति का दायां हाथ किस दिशा में होगा? [Army Tech 2024]", options: ["पूर्व", "पश्चिम", "उत्तर", "दक्षिण"], answer: 0 }
-    ],
-    3: [
-        { q: "Q1. [GK] सौरमंडल का सबसे बड़ा ग्रह कौन सा है? [Army GD 2024]", options: ["शनि", "बृहस्पति", "मंगल", "पृथ्वी"], answer: 1 },
-        { q: "Q2. [GK] 'अजंता की गुफाएं' किस राज्य में स्थित हैं? [Army GD 2023]", options: ["मध्यप्रदेश", "महाराष्ट्र", "गुजरात", "राजस्थान"], answer: 1 },
-        { q: "Q3. [GK] भारत के प्रथम प्रधानमंत्री कौन थे? [Army Tradesman 2024]", options: ["सरदार पटेल", "जवाहरलाल नेहरू", "डॉ. राजेंद्र प्रसाद", "लाल बहादुर शास्त्री"], answer: 1 },
-        { q: "Q4. [GK] 'सुंदरबन राष्ट्रीय उद्यान' किस राज्य में स्थित ह 
+let DATA, test, current=0, answers=[], left=3600, interval;
+fetch('questions.json').then(r=>r.json()).then(d=>{DATA=d;renderCards()});
+const $=id=>document.getElementById(id);
+function renderCards(){ $('cards').innerHTML=DATA.tests.map(t=>`<div class="card"><h3>${t.title}</h3><p>50 प्रश्न • 60 मिनट<br>GK 15 • Science 15 • Maths 15 • Reasoning 5</p><button class="btn" onclick="start(${t.id})">Start Test</button></div>`).join('') }
+function start(id){test=DATA.tests.find(x=>x.id===id);current=0;answers=Array(test.questions.length).fill(null);left=test.duration*60;$('home').classList.add('hidden');$('result').classList.add('hidden');$('quiz').classList.remove('hidden');$('title').textContent=test.title;clearInterval(interval);interval=setInterval(()=>{left--;showTime();if(left<=0){clearInterval(interval);finish()}},1000);renderQ()}
+function showTime(){let m=Math.floor(left/60),s=left%60;$('timer').textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0')}
+function renderQ(){let q=test.questions[current];$('progress').textContent=`प्रश्न ${current+1} / ${test.questions.length}`;$('tag').textContent=q.tag;$('qtext').textContent=q.text;$('opts').innerHTML=q.options.map((o,i)=>`<label class="opt"><input type="radio" name="o" ${answers[current]===i?'checked':''} onchange="answers[current]=${i}"> ${String.fromCharCode(65+i)}. ${o}</label>`).join('');}
+function nextQ(){if(current<test.questions.length-1){current++;renderQ()}else finish()}
+function prevQ(){if(current>0){current--;renderQ()}}
+function finish(){clearInterval(interval);let score=0;test.questions.forEach((q,i)=>{if(answers[i]===q.answer)score++});$('quiz').classList.add('hidden');$('result').classList.remove('hidden');$('resultTitle').textContent=test.title+' Result';$('score').textContent=score+' / '+test.questions.length;$('stats').textContent=`सही: ${score} • गलत: ${answers.filter((a,i)=>a!==null&&a!==test.questions[i].answer).length} • छोड़े: ${answers.filter(a=>a===null).length}`;$('review').innerHTML=test.questions.map((q,i)=>{let ok=answers[i]===q.answer;return `<div><b>${i+1}. ${q.text}</b><br><span class="${ok?'correct':'wrong'}">${answers[i]===null?'छोड़ा':ok?'सही':'गलत'}</span> • सही उत्तर: ${q.options[q.answer]}</div>`}).join('')}
+function goHome(){clearInterval(interval);$('quiz').classList.add('hidden');$('result').classList.add('hidden');$('home').classList.remove('hidden')}
+</script></body></html>
